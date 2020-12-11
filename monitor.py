@@ -29,7 +29,8 @@ def main():
             backuped_logs_list.append(to_backup_log)
 
     # 判断是否需要email提醒
-    if conf['need_email']:
+    # 本次没有进行备份操作的话也不发送email
+    if conf['need_email'] and backuped_logs_list:
         # 创建邮件内容
         message = '''
         你的{}服务器内，以下日志文件大小超过设置阈值，已进行备份：
