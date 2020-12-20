@@ -1,15 +1,19 @@
 import utils
+import sys
 
 
-# TODO 待增加系统命令参数功能
 def main():
     """
     监控器方法
     """
 
+    # 判断参数列表长度，看是否提供了配置文件目录
+    argv_list = sys.argv
+    if len(argv_list) != 2:
+        # 如果参数列表长度不是2，表明给的参数不止一个或没给参数，报错提示并退出
+        raise '参数长度不正确，请给出仅一个配置文件路径参数，如果路径含有空格请使用单/双引号包裹'
     # 读取配置文件
-    # TODO 参数待补充
-    conf = utils.read_conf()
+    conf = utils.read_conf(argv_list[1])
     
     # 遍历配置中要管理的目录
     # 将需要进行备份的日志文件进行备份操作

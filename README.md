@@ -20,7 +20,7 @@
 
 # 使用方法
 
-- 单次使用直接调用python执行monitor.py文件就好了：`python3 monitor.py`
+- 单次使用直接调用python执行monitor.py文件并提供配置文件路径参数就好了：`python3 monitor.py ./conf.ini`
 - 正式使用建议配合Linux系统的计划任务`crontab`，配置执行周期
 - 如果你用windows server的话...emmm...那你应该会用它的注册服务的吧hhh，不会的话去百度/谷歌吧～
 
